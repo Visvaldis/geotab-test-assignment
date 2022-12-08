@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotabTest", "GeotabTest\GeotabTest.csproj", "{EB47FE3C-B48E-4941-9238-AC19C4C180A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865} = {CA38CCDA-2044-4091-87A6-DDD9599B0865}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettierModule", "PrettierModule\PrettierModule.csproj", "{CA38CCDA-2044-4091-87A6-DDD9599B0865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettifierTests", "PrettifierTests\PrettifierTests.csproj", "{E47C56C5-339A-49CD-8074-E6BBEBD38C20}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865} = {CA38CCDA-2044-4091-87A6-DDD9599B0865}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB47FE3C-B48E-4941-9238-AC19C4C180A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB47FE3C-B48E-4941-9238-AC19C4C180A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB47FE3C-B48E-4941-9238-AC19C4C180A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB47FE3C-B48E-4941-9238-AC19C4C180A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA38CCDA-2044-4091-87A6-DDD9599B0865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47C56C5-339A-49CD-8074-E6BBEBD38C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47C56C5-339A-49CD-8074-E6BBEBD38C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47C56C5-339A-49CD-8074-E6BBEBD38C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47C56C5-339A-49CD-8074-E6BBEBD38C20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73EBDB1D-9B5B-4B8E-B0FD-F16398511487}
+	EndGlobalSection
+EndGlobal
