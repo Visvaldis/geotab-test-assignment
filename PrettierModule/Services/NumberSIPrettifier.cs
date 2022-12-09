@@ -19,13 +19,13 @@ namespace PrettifierModule.Services
 			int rank = (int)Math.Log10(Math.Abs(number));
 			if (rank < 6)
 				return number.ToString();
-			if (!SIUnitSymbols.Values.ContainsKey(rank / 3))
+			if (!SIUnitPrefixes.Values.ContainsKey(rank / 3))
 				throw new NumberNotSupportedException(number.ToString());
 
 			int rankAfterTruncation = rank - rank % 3;
 			var truncatedNumber = number / Math.Pow(10, rankAfterTruncation);
 			var roundedTruncatedNumber = Math.Round(truncatedNumber, accuracy);
-			return $"{roundedTruncatedNumber}{SIUnitSymbols.Values[rank / 3]}";
+			return $"{roundedTruncatedNumber}{SIUnitPrefixes.Values[rank / 3]}";
 
 		}
 

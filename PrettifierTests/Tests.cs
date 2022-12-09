@@ -32,8 +32,8 @@ namespace PrettifierTests
 		[TestCase(1234567890123456789.0, "1.2E")]
 		[TestCase(1234567890123456789012.0, "1.2Z")]
 		[TestCase(1234567890123456789012345.0, "1.2Y")]
-		[TestCase(1234567890123456789012345678.0, "1.2O")]
-		[TestCase(1234567890123456789012345678901.0, "1.2N")]
+		[TestCase(1234567890123456789012345678.0, "1.2R")]
+		[TestCase(1234567890123456789012345678901.0, "1.2Q")]
 		public void Prettify_Integer_ShouldReturn_Expected(double number, string expected)
 		{
 

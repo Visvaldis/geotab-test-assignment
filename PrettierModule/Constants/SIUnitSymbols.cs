@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace PrettifierModule.Constants
 {
-	internal static class SIUnitSymbols
+	internal static class SIUnitPrefixes
 	{
+		//https://en.wikipedia.org/wiki/Metric_prefix#List_of_SI_prefixes
 		static public Dictionary<int, char> Values
 		{
 			get
@@ -21,8 +22,8 @@ namespace PrettifierModule.Constants
 						{ 6, 'E' },
 						{ 7, 'Z' },
 						{ 8, 'Y' },
-						{ 9, 'O' },
-						{ 10, 'N' }
+						{ 9, 'R' },
+						{ 10, 'Q' }
 					};
 			}
 		}
