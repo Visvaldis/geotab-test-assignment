@@ -10,8 +10,31 @@ public class Program
 		var host = CreateHostBuilder(args).Build();
 
 		var prettifierService = host.Services.GetService<IPrettifier>() ?? throw new NullReferenceException("IPrettifier service was null"); ;
+		string input;
+		int accuracy;
+		Console.Write("Enter number for prettify: ");
+		input = Console.ReadLine() ?? "";
+		do
+		{ 	
+			Console.Write("Enter accuracy: ");
 
-		Console.WriteLine(prettifierService.Prettify("2345"), "\n");		
+			if(!int.TryParse(Console.ReadLine(), out accuracy))
+			{
+				Console.WriteLine("Accuraccy should be an integer, please start over.");
+				continue;
+			}
+			try
+			{
+				Console.WriteLine(prettifierService.Prettify(input, accuracy), "\n");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				continue;
+			}
+			Console.WriteLine("Again? \nEnter number to continue or press enter to exit.");
+			input = Console.ReadLine() ?? "";
+		} while (input != "");
 	}
 
 
