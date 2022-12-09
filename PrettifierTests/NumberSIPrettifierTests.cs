@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace PrettifierTests
 {
-	internal class Tests: TestBase
+	internal class NumberSIPrettifierTests: TestBase
 	{
 		private IPrettifier prettifierService;
 
