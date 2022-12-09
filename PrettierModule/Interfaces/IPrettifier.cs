@@ -8,7 +8,7 @@ namespace PrettifierModule.Interfaces
 {
 	public interface IPrettifier
 	{
-		string Prettify(string number, int accuracy = 0);
-		string Prettify(double number, int accuracy = 0);
+		string Prettify(string number, int accuracy = 1);
+		string Prettify(double number, int accuracy = 1);
 	}
 }
