@@ -92,6 +92,24 @@ namespace PrettifierTests
 			Assert.That(() => prettifierService.Prettify(input), Throws.ArgumentException);
 		}
 
+		[TestCase(123.0, "123", 1)]
+		[TestCase(123456, "123456", 10)]
+		[TestCase(1234567.0, "1.235M", 3)]
+		[TestCase(1000000.0, "1M",3)]
+		[TestCase(12345678.0, "12M",0)]
+		[TestCase(123456789.0, "123.4568M",4)]
+		[TestCase(1234567890.0, "1.23456789B", 10)]
+		public void Prettify_Accuracy_ShouldReturn_Expected(double number, string expected, int accuracy)
+		{
+
+			//act
+			var actual = prettifierService.Prettify(number, accuracy);
+
+			//assert
+			Assert.That(actual, Is.EqualTo(expected));
+		}
+
+
 
 	}
 }
