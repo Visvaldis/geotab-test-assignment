@@ -13,6 +13,8 @@ public class Program
 
 		Console.WriteLine(prettifierService.Prettify("2345"), "\n");		
 	}
+
+
 	public static IHostBuilder CreateHostBuilder(string[] args) =>
 	Host.CreateDefaultBuilder(args)
 		.ConfigureServices((hostContext, services) =>
