@@ -16,6 +16,5 @@ namespace PrettifierModule.Exceptions
 		public NumberNotSupportedException() : base()
 		{
 		}
-
 	}
 }

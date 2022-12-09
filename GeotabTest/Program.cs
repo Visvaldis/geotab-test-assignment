@@ -9,7 +9,8 @@ public class Program
 	{
 		var host = CreateHostBuilder(args).Build();
 
-		var prettifierService = host.Services.GetService<IPrettifier>() ?? throw new NullReferenceException("IPrettifier service was null"); ;
+		var prettifierService = host.Services.GetService<IPrettifier>() 
+			?? throw new NullReferenceException("IPrettifier service was null"); ;
 		string input;
 		int accuracy;
 		Console.Write("Enter number for prettify: ");

@@ -13,8 +13,10 @@ namespace PrettifierTests
 		[SetUp]
 		public void Setup()
 		{
-			prettifierService = ServiceProvider.GetService<IPrettifier>()?? throw new NullReferenceException("IPrettifier service was null");
+			prettifierService = ServiceProvider.GetService<IPrettifier>() 
+				?? throw new NullReferenceException("IPrettifier service was null");
 		}
+
 
 		[TestCase(123.0, "123")]
 		[TestCase(1234.0, "1234")]
@@ -36,13 +38,13 @@ namespace PrettifierTests
 		[TestCase(1234567890123456789012345678901.0, "1.2Q")]
 		public void Prettify_Integer_ShouldReturn_Expected(double number, string expected)
 		{
-
 			//act
 			var actual = prettifierService.Prettify(number);
 
 			//assert
 			Assert.That(actual, Is.EqualTo(expected));
 		}
+
 
 		[TestCase(-1234.0, "-1234")]
 		[TestCase(12345.999, "12345.999")]
@@ -67,7 +69,6 @@ namespace PrettifierTests
 		}
 
 
-
 		[TestCase("123456", "123456")]
 		[TestCase("12345678.0", "12.3M")]
 		[TestCase("12345678", "12.3M")]
@@ -82,6 +83,7 @@ namespace PrettifierTests
 			Assert.That(actual, Is.EqualTo(expected));
 		}
 
+
 		[Test]
 		public void Prettify_String_ShouldThrow_ArgumentException()
 		{
@@ -92,6 +94,7 @@ namespace PrettifierTests
 			Assert.That(() => prettifierService.Prettify(input), Throws.ArgumentException);
 		}
 
+
 		[TestCase(123.0, "123", 1)]
 		[TestCase(123456, "123456", 10)]
 		[TestCase(1234567.0, "1.235M", 3)]
@@ -101,15 +104,11 @@ namespace PrettifierTests
 		[TestCase(1234567890.0, "1.23456789B", 10)]
 		public void Prettify_Accuracy_ShouldReturn_Expected(double number, string expected, int accuracy)
 		{
-
 			//act
 			var actual = prettifierService.Prettify(number, accuracy);
 
 			//assert
 			Assert.That(actual, Is.EqualTo(expected));
 		}
-
-
-
 	}
 }

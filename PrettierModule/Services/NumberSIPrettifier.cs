@@ -4,7 +4,7 @@ using PrettifierModule.Interfaces;
 
 namespace PrettifierModule.Services
 {
-	public class NumberSIPrettifier : IPrettifier
+	internal class NumberSIPrettifier : IPrettifier
 	{
 		public string Prettify(string number, int accuracy)
 		{
