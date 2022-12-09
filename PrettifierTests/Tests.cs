@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using PrettifierModule.Interfaces;
+using PrettifierModule.Exceptions;
 using PrettifierTests.IoC;
 using NUnit.Framework;
 
@@ -34,7 +35,7 @@ namespace PrettifierTests
 		[TestCase(1234567890123456789012.0, "1.2Z")]
 		[TestCase(1234567890123456789012345.0, "1.2Y")]
 		[TestCase(1234567890123456789012345678.0, "1.2O")]
-		[TestCase(1234567890123456789012345678.0, "1.2N")]
+		[TestCase(1234567890123456789012345678901.0, "1.2N")]
 		public void Prettify_Integer_ShouldReturn_Expected(double number, string expected)
 		{
 
@@ -46,7 +47,7 @@ namespace PrettifierTests
 		}
 
 		[TestCase(-1234.0, "-1234")]
-		[TestCase(12345.9990, "12345")]
+		[TestCase(12345.999, "12345.999")]
 		[TestCase(-12345678.0, "-12.3M")]
 		[TestCase(-1000000.987, "-1M")]
 		[TestCase(-1234567890123456789012.87654, "-1.2Z")]
@@ -64,15 +65,15 @@ namespace PrettifierTests
 		public void Prettify_Integer_ShouldThrow_NumberNotSupportedException(double number)
 		{
 			//act & assert
-			Assert.That(() => prettifierService.Prettify(number), Throws.ArgumentException);
+			Assert.That(() => prettifierService.Prettify(number), Throws.InstanceOf<NumberNotSupportedException>());
 		}
 
 
 
-		[TestCase("123456", "")]
+		[TestCase("123456", "123456")]
 		[TestCase("12345678.0", "12.3M")]
 		[TestCase("12345678", "12.3M")]
-		[TestCase("12345.9990", "12345")]
+		[TestCase("12345.999", "12345.999")]
 		[TestCase("-12345678.0", "-12.3M")]
 		public void Prettify_String_ShouldReturn_Expected(string number, string expected)
 		{
@@ -92,7 +93,6 @@ namespace PrettifierTests
 			//act & assert
 			Assert.That(() => prettifierService.Prettify(input), Throws.ArgumentException);
 		}
-
 
 
 	}

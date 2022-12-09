@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrettifierModule.Exceptions
 {
-	internal class NumberNotSupportedException : Exception
+	public class NumberNotSupportedException : Exception
 	{
 		public NumberNotSupportedException(string? number) 
 			: base($"{number} is too large and not supported yet")
