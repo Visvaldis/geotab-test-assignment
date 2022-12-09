@@ -3,15 +3,11 @@
 ## Problem: 
 Write tested code (in any language) that accepts a numeric type and returns a truncated, "prettified" string version. The prettified version should include one number after the decimal when the truncated number is not an integer. It should prettify numbers greater than 6 digits and support millions, billions and trillions. 
 
-### Examples:
-input: 1000000
-output: 1M
-input: 2500000.34 
-output: 2.5M
-input: 532
-output: 532
-input: 1123456789
-output: 1.1B 
+### Examples:  
+input: 1000000 output: 1M  
+input: 2500000.34 output: 2.5M  
+input: 532 output: 532   
+input: 1123456789 output: 1.1B   
 
 ## Approach
 As a task, we will make a separate class library that can be reused anywhere in the future and imported into a new project. It was decided to use the console as an interface, because this is the fastest approach to show the results of the library.  
@@ -24,11 +20,11 @@ However, if you need to use the functionality in other projects/services, with t
 The main design solution was the usage of dependency injection, in order to achieve maximum flexibility and extensibility of the functionality later on. This approach is very convenient, because if we go to add a new implementation of IPrettifier (for example for scientific e notation, 3.5B == 3.5e9), it can be done with minimal changes in functionality. 
 
 ### Brief architecture description:
-Frontend (aka CLI)
-↓
-IPrettifier ← NumberSIPrettifier (in the separate class library)
-↑
-NumberSIPrettifierTests
+Frontend (aka CLI)  
+↓  
+IPrettifier ← NumberSIPrettifier (in the separate class library)  
+↑  
+NumberSIPrettifierTests  
 
 ## Assumptions
 Since the essence of the task is to make decorate large numbers, the first thing to do is to understand how large they will be. Obviously **int** and even **ulong** will not be enough (ulong size is 18,446,744,073,709,551,615 which equals 18.4E after decoration). For the task **double** is quite good, because its length of +- 10^308 will be enough.  
