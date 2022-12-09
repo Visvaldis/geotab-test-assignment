@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PrettifierModule.Interfaces;
 
+
 public class Program
 {
 	public static void Main(string[] args)

@@ -1,8 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using PrettifierModule.Interfaces;
 using PrettifierModule.Exceptions;
-using PrettifierTests.IoC;
 using NUnit.Framework;
+
 
 namespace PrettifierTests
 {
