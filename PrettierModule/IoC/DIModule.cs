@@ -7,7 +7,7 @@ namespace PrettifierModule.IoC
 {
 	public static class DIModule
 	{
-		public static void RegisterPrettierModule(this IServiceCollection builder)
+		public static void RegisterPrettifierModule(this IServiceCollection builder)
 		{
 			builder.AddSingleton<IPrettifier, NumberSIPrettifier>();
 		}

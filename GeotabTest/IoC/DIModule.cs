@@ -8,7 +8,7 @@ namespace GeotabTest.IoC
 	{
 		public static IServiceCollection RegisterDependencies(this IServiceCollection builder)
 		{
-			builder.RegisterPrettierModule();
+			builder.RegisterPrettifierModule();
 			return builder;
 		}
 	}
